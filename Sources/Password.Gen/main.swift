@@ -23,7 +23,7 @@ func main() {
                 print("The length is too small. Use at least 1.".lightRed)
                 return
             }
-            password = "".random(with: length)
+            password = String.random(with: length)
         case 4:
             var length = Int(CommandLine.arguments[2])!
             if length > 1024 {
@@ -34,9 +34,9 @@ func main() {
                 return
             }
             let characters = CommandLine.arguments[3]
-            password = "".random(with: length, characters: characters)
+            password = String.random(with: length, characters: characters)
         default:
-            password = "".random(with: 16)
+            password = String.random(with: 16)
         }
     default:
         print("Usage: \(CommandLine.arguments[0]) gen [length] [customChars]".lightYellow + "   This is positional.".bold.blink.green)
